@@ -1,0 +1,11 @@
+site_back_end:
+    resource: "@SiteBackEndBundle/Resources/config/routing.yml"
+    prefix:   /
+
+site_front_end:
+    resource: "@SiteFrontEndBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
