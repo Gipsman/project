@@ -1,0 +1,25 @@
+services:
+#    site_back_end.example:
+#        class: Site\BackEndBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+# Acme/DemoBundle/Resources/config/admin.yml
+    sonata.admin.post:
+        class: Site\BackEndBundle\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Контент", label: "Записи" }
+        arguments:
+            - ~
+            - Site\BackEndBundle\Entity\Post
+            - ~
+        calls:
+            - [ setTranslationDomain, [AcmeDemoBundle]]
+    sonata.admin.tags:
+        class: Site\BackEndBundle\Admin\TagsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Тэги", label: "Записи" }
+        arguments:
+            - ~
+            - Site\BackEndBundle\Entity\Tags
+            - ~
+        calls:
+            - [ setTranslationDomain, [AcmeDemoBundle]]

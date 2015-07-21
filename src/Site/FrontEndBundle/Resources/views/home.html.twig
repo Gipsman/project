@@ -1,0 +1,10 @@
+{% extends 'SiteFrontEndBundle::base_template.html.twig' %}
+  
+{% block content %}
+{% for post in posts %}
+{{ post.title }}
+{{ post.preview }}    
+{{ post.content }}    
+{{ post.created|localizeddate('none', 'none', 'ru_RU', null, " d MMMM YYYY")}}  
+{% endfor %}
+{% endblock %}

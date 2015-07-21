@@ -1,0 +1,21 @@
+{% extends 'SiteFrontEndBundle::base_template.html.twig' %}
+
+{% block content %} 
+
+
+<h1>Регистрация баера</h1>
+<p>
+<form method="POST" action="/users" id="signin">
+<p><input name="login" type="text" placeholder=" Ведите логин"></p>
+<p><input name="pass" type="text" placeholder=" Ведите пароль"></p>
+<p><input name="fio"type="text"placeholder=" Ведите ФИО"></p>
+<p><input name="company" type="text"placeholder=" Название компании"></p>
+<p><input name="number" type="text" placeholder=" Ваш телефон"></p>
+<p><input name="email" type="text" placeholder=" Ваш email"></p>
+<p><input name="go" type="submit"></p>
+  </form>
+</p>
+
+
+
+{% endblock %}

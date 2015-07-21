@@ -1,0 +1,27 @@
+Site\BackEndBundle\Entity\post:
+    type: entity
+    table: post
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        preview:
+            type: string
+            length: 255
+        content:
+            type: text
+        slug:
+            type: string
+            length: 255
+        created:
+            type: datetime
+        autor:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
