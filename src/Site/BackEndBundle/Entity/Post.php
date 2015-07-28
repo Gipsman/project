@@ -237,4 +237,32 @@ class Post
     {
         return $this->slug;
     }
+    /**
+     * @var \Site\BackEndBundle\Entity\Category
+     */
+    private $category;
+
+
+    /**
+     * Set category
+     *
+     * @param \Site\BackEndBundle\Entity\Category $category
+     * @return Post
+     */
+    public function setCategory(\Site\BackEndBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \Site\BackEndBundle\Entity\Category 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
 }

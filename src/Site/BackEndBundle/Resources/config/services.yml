@@ -13,6 +13,7 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [AcmeDemoBundle]]
+            
     sonata.admin.tags:
         class: Site\BackEndBundle\Admin\TagsAdmin
         tags:
@@ -23,3 +24,19 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [AcmeDemoBundle]]
+            
+    sonata.admin.category:
+        class: Site\BackEndBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "категории", label: "Записи" }
+        arguments:
+            - ~
+            - Site\BackEndBundle\Entity\Category
+            - ~
+        calls:
+            - [ setTranslationDomain, [AcmeDemoBundle]]
+    
+    tags_manager:
+        class: Site\BackEndBundle\Service\TagsManager
+        arguments:
+            - @service_container

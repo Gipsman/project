@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/rab/server/project/src/Site/FrontEndBundle/Resources/config/routing.yml</file>
-            <file>file:/home/rab/server/project/src/Site/FrontEndBundle/Controller/DefaultController.php</file>
             <file>file:/home/rab/server/project/src/Site/FrontEndBundle/Resources/views/home.html.twig</file>
-            <file>file:/home/rab/server/project/src/Site/FrontEndBundle/Resources/views/base_template.html.twig</file>
-            <file>file:/home/rab/server/project/src/Site/FrontEndBundle/Resources/views/404_view.html.twig</file>
-            <file>file:/home/rab/server/project/src/Site/FrontEndBundle/Resources/views/admin_view.html.twig</file>
+            <file>file:/home/rab/server/project/src/Site/FrontEndBundle/Controller/DefaultController.php</file>
+            <file>file:/home/rab/server/project/src/Site/BackEndBundle/Service/TagsManager.php</file>
+            <file>file:/home/rab/server/project/src/Site/BackEndBundle/Resources/config/services.yml</file>
+            <file>file:/home/rab/server/project/src/Site/BackEndBundle/Admin/CategoryAdmin.php</file>
+            <file>file:/home/rab/server/project/src/Site/BackEndBundle/Entity/Category.php</file>
+            <file>file:/home/rab/server/project/src/Site/BackEndBundle/Entity/Post.php</file>
         </group>
     </open-files>
 </project-private>

@@ -4,7 +4,19 @@
 {% for post in posts %}
 {{ post.title }}
 {{ post.preview }}    
-{{ post.content }}    
-{{ post.created|localizeddate('none', 'none', 'ru_RU', null, " d MMMM YYYY")}}  
+{{ post.content }} 
+{{ post.created|localizeddate('none', 'none', 'ru_RU', null, " d MMMM YYYY")}}
+{% for tag in post.tags %}
+{{tag.name}}
+
+{# примечание: это заккоментированно, пока не используется 
+#}
+<a href="{{url('users_page',{slug:tag.slug})}}">{{tag.name}}</a>
+
+
 {% endfor %}
+{{post.getCategory}}
+{% endfor %}
+{{ knp_pagination_render(posts, 'SiteFrontEndBundle::pagination.html.twig') }}
+
 {% endblock %}

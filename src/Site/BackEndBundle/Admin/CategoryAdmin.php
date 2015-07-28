@@ -8,19 +8,15 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class PostAdmin extends Admin
+class CategoryAdmin extends Admin
 {
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title',NULL, array('label'=>'титул'))
-            ->add('preview',NULL, array('label'=>'предпросмотр'))
-            ->add('content',NULL, array('label'=>'контент'))
+            ->add('name',NULL, array('label'=>'имя'))            
             ->add('created',NULL, array('label'=>'дата создания'))
-            ->add('slug',NULL, array('label'=>'ссылка'))
-            ->add('autor',NULL, array('label'=>'autor'))
-            ->add('tags',NULL, array('label'=>'Теги'))                
+            ->add('slug',NULL, array('label'=>'ссылка'))                            
         ;
     }
 
@@ -28,8 +24,9 @@ class PostAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('title' ,NULL, array('label '=>'титул'))
+            ->add('name',NULL, array('label'=>'имя'))            
             ->add('created',NULL, array('label'=>'дата создания'))
+            ->add('slug',NULL, array('label'=>'ссылка')) 
         ;
     }
 
@@ -38,12 +35,9 @@ class PostAdmin extends Admin
     {
         $listMapper
         ->addIdentifier('id')
-        ->add('title',NULL, array('label'=>'титул'))
-        ->add('preview',NULL, array('label'=>'предпросмотр'))
-        ->add('content',NULL, array('label'=>'контент'))
+        ->add('name',NULL, array('label'=>'имя'))            
         ->add('created',NULL, array('label'=>'дата создания'))
-        ->add('slug',NULL, array('label'=>'ссылка'))
-        ->add('autor',NULL, array('label'=>'autor')) 
+        ->add('slug',NULL, array('label'=>'ссылка')) 
         ;
     }
 }

@@ -5,9 +5,9 @@ namespace Site\BackEndBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tags
+ * Category
  */
-class Tags
+class Category
 {
     /**
      * @var integer
@@ -17,7 +17,7 @@ class Tags
     /**
      * @var string
      */
-    private $tag;
+    private $name;
 
     /**
      * @var \DateTime
@@ -41,33 +41,33 @@ class Tags
     }
 
     /**
-     * Set tag
+     * Set name
      *
-     * @param string $tag
-     * @return Tags
+     * @param string $name
+     * @return Category
      */
-    public function setTag($tag)
+    public function setName($name)
     {
-        $this->tag = $tag;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get tag
+     * Get name
      *
      * @return string 
      */
-    public function getTag()
+    public function getName()
     {
-        return $this->tag;
+        return $this->name;
     }
 
     /**
      * Set created
      *
      * @param \DateTime $created
-     * @return Tags
+     * @return Category
      */
     public function setCreated($created)
     {
@@ -90,7 +90,7 @@ class Tags
      * Set slug
      *
      * @param string $slug
-     * @return Tags
+     * @return Category
      */
     public function setSlug($slug)
     {
@@ -111,77 +111,46 @@ class Tags
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $post;
+    private $posts;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->post = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add post
+     * Add posts
      *
-     * @param \Site\BackEndBundle\Entity\Post $post
-     * @return Tags
+     * @param \Site\BackEndBundle\Entity\Post $posts
+     * @return Category
      */
-    public function addPost(\Site\BackEndBundle\Entity\Post $post)
+    public function addPost(\Site\BackEndBundle\Entity\Post $posts)
     {
-        $this->post[] = $post;
+        $this->posts[] = $posts;
 
         return $this;
     }
 
     /**
-     * Remove post
+     * Remove posts
      *
-     * @param \Site\BackEndBundle\Entity\Post $post
+     * @param \Site\BackEndBundle\Entity\Post $posts
      */
-    public function removePost(\Site\BackEndBundle\Entity\Post $post)
+    public function removePost(\Site\BackEndBundle\Entity\Post $posts)
     {
-        $this->post->removeElement($post);
+        $this->posts->removeElement($posts);
     }
 
     /**
-     * Get post
+     * Get posts
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getPost()
+    public function getPosts()
     {
-        return $this->post;
-    }
-    /**
-     * @var string
-     */
-    private $name;
-
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Tags
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-    public function __toString() {
-        return $this->name;
+        return $this->posts;
     }
 }

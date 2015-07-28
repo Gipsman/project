@@ -1,6 +1,6 @@
-Site\BackEndBundle\Entity\post:
+Site\BackEndBundle\Entity\Category:
     type: entity
-    table: post
+    table: category
     id:
         id:
             type: integer
@@ -8,20 +8,16 @@ Site\BackEndBundle\Entity\post:
             generator:
                 strategy: AUTO
     fields:
-        title:
-            type: string
-            length: 255
-        preview:
-            type: string
-            length: 255
-        content:
-            type: text
-        slug:
+        name:
             type: string
             length: 255
         created:
             type: datetime
-        autor:
+        slug:
             type: string
             length: 255
+    oneToMany:
+        posts:
+            targetEntity: Post
+            mappedBy: category
     lifecycleCallbacks: {  }

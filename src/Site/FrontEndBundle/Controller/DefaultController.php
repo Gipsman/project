@@ -10,14 +10,19 @@ class DefaultController extends Controller
     {
     }
     
-    public function homeAction()
+    public function homeAction($page)
     {   
+      $paginator=$this->get('knp_paginator');
       $em=$this->get('doctrine.orm.entity_manager');
       $posts=$em->getRepository('SiteBackEndBundle:Post')
       ->findAll();
-       // dump($posts);
-      return $this->render('SiteFrontEndBundle::home.html.twig', array('posts' => $posts));
+      //->counter();
+       // dump($posts);      
+      $data=$paginator->paginate($posts,$page,1);
+      return $this->render('SiteFrontEndBundle::home.html.twig', array('posts' => $data));
     }
+   
+    /*
     public function usersAction()
     {   
         $em=$this->get('doctrine.orm.entity_manager');
@@ -26,4 +31,13 @@ class DefaultController extends Controller
        //dump($arr);
        return $this->render('SiteFrontEndBundle::users.html.twig', array('tags' => $tags));
     }
+   */
+     
+    public function usersAction($slug) {
+        $posts=$htis->get('service')
+                    ->getPostsByTag($slug);
+        return $this->render('SiteFrontEndBundle::users.html.twig', array('posts' => $post));
+    }     
+      
+
 }

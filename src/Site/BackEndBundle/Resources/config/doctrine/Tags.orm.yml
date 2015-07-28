@@ -8,10 +8,10 @@ Site\BackEndBundle\Entity\Tags:
             generator:
                 strategy: AUTO
     fields:
-        tag:
+        name:
             type: string
             length: 255
-            column: Tag
+            column: name
         created:
             type: datetime
         slug:
@@ -20,5 +20,5 @@ Site\BackEndBundle\Entity\Tags:
     manyToMany:
         post:
             targetEntity: Post
-            mappedBy: tags
+            mappedBy: tgs
     lifecycleCallbacks: {  }
