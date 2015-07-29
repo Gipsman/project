@@ -2,9 +2,18 @@
 
 {% block content %} 
 
-    
-
-<h1>Регистрация баера</h1>
+        {% for  post in post %}
+        <h3>{{ post.title }}</h3>        
+        <p>{{ post.preview }}</p>
+        <p>{% if post.tags is not empty %}
+         Теги: 
+        {% endif%}
+        {% for tag in post.getTags %}
+        <a href="/">{{ tag.name }} &nbsp;</a>
+        {% endfor %}
+        {{post.getCategory}}
+        {% endfor %}
+<h1>Регистрация</h1>
 <p>
 <form method="POST" action="/users" id="signin">
 <p><input name="login" type="text" placeholder=" Ведите логин"></p>

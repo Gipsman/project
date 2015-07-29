@@ -34,9 +34,9 @@ class DefaultController extends Controller
    */
      
     public function usersAction($slug) {
-        $posts=$htis->get('service')
-                    ->getPostsByTag($slug);
-        return $this->render('SiteFrontEndBundle::users.html.twig', array('posts' => $post));
+        $posts=$this->get('tags_manager')
+                    ->getPostByTag($slug);
+        return $this->render('SiteFrontEndBundle::users.html.twig', array('post' => $posts));
     }     
       
 

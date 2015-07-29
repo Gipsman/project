@@ -5,9 +5,9 @@ class TagsManager
 {
     protected $container;
     
-    function __construct($container)
+    function __construct($cont)
     {
-        $this->container=$container;
+        $this->container=$cont;
     }
     /*
      *get posts by slug      
@@ -16,7 +16,7 @@ class TagsManager
         $posts=$this->getEm()
                     ->getRepository('SiteBackEndBundle:Tags')
                     ->findOneBySlug($slug)
-                    ->getPosts();
+                    ->getPost();
         return $posts;
     }    
    /*
