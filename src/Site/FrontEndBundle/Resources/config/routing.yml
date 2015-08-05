@@ -12,15 +12,18 @@ users:
     path: /users
     defaults: {_controller: SiteFrontEndBundle:Default:users}
     
+news:
+    path: /news
+    defaults: {_controller: SiteFrontEndBundle:Default:news}
+
+newsget:
+    path: /newsget/{post}
+    defaults: {_controller: SiteFrontEndBundle:Default:news}    
+    
 users_page:
     path: /users/{slug}
-    defaults: {_controller: SiteFrontEndBundle:Default:users}
+    defaults: {_controller: SiteFrontEndBundle:Default:users}    
     
-admin:
-    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /admin
-
-_sonata_admin:
-    resource: .
-    type: sonata_admin
-    prefix: /admin    
+getpostbycat:
+    path: /cat/{slug}
+    defaults: {_controller: SiteFrontEndBundle:Default:postsByCat}

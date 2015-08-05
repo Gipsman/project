@@ -19,6 +19,17 @@ class TagsManager
                     ->getPost();
         return $posts;
     }    
+    
+    public function getPostsByCategory($slug)
+    {
+        $posts= $this->getEm()
+                     ->getRepository('SiteBackEndBundle:Category')
+                     ->findOneBySlug($slug)
+                     ->getPosts();
+             dump($posts);
+                     
+            return $posts;
+    }
    /*
     * получит ем
     */
@@ -26,6 +37,7 @@ class TagsManager
      return $this->container->get('doctrine.orm.entity_manager');
 
 }
+
 }
 
 

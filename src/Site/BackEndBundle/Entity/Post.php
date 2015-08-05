@@ -3,6 +3,8 @@
 namespace Site\BackEndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Post
@@ -39,7 +41,42 @@ class Post
      */
     private $preview;
 
-
+ public static function loadValidatorMetadataAutor(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('autor', new Assert\Length(array(
+            'min'        => 7,
+            'max'        => 30,
+            'minMessage' => 'Your first name must be at least {{ limit }} characters long',
+            'maxMessage' => 'Your first name cannot be longer than {{ limit }} characters',
+        )));
+    }
+    public static function loadValidatorMetadataTitle(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('title', new Assert\Length(array(
+            'min'        => 15,
+            'max'        => 150,
+            'minMessage' => 'Your first name must be at least {{ limit }} characters long',
+            'maxMessage' => 'Your first name cannot be longer than {{ limit }} characters',
+        )));
+    }
+    public static function loadValidatorMetadataContent(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('content', new Assert\Length(array(
+            'min'        => 10,
+            'max'        => 4096,
+            'minMessage' => 'Your first name must be at least {{ limit }} characters long',
+            'maxMessage' => 'Your first name cannot be longer than {{ limit }} characters',
+        )));
+    }
+    public static function loadValidatorMetadaPreview(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('preview', new Assert\Length(array(
+            'min'        => 10,
+            'max'        => 100,
+            'minMessage' => 'Your first name must be at least {{ limit }} characters long',
+            'maxMessage' => 'Your first name cannot be longer than {{ limit }} characters',
+        )));
+    }
     /**
      * Get id
      *
@@ -265,4 +302,5 @@ class Post
     {
         return $this->category;
     }
+    
 }

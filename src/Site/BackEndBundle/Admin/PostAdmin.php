@@ -20,7 +20,8 @@ class PostAdmin extends Admin
             ->add('created',NULL, array('label'=>'дата создания'))
             ->add('slug',NULL, array('label'=>'ссылка'))
             ->add('autor',NULL, array('label'=>'autor'))
-            ->add('tags',NULL, array('label'=>'Теги'))                
+            ->add('tags',NULL, array('label'=>'Теги')) 
+            ->add('category',NULL, array('label'=>'категории'))   
         ;
     }
 
@@ -37,8 +38,7 @@ class PostAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-        ->addIdentifier('id')
-        ->add('title',NULL, array('label'=>'титул'))
+        ->addIdentifier('title')
         ->add('preview',NULL, array('label'=>'предпросмотр'))
         ->add('content',NULL, array('label'=>'контент'))
         ->add('created',NULL, array('label'=>'дата создания'))

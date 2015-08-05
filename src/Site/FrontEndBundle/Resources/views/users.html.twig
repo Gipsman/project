@@ -1,26 +1,20 @@
 {% extends 'SiteFrontEndBundle::base_template.html.twig' %}
 
 {% block content %} 
-
-        {% for  post in post %}
-        <h3>{{ post.title }}</h3>        
-        <p>{{ post.preview }}</p>
-        <p>{% if post.tags is not empty %}
-         Теги: 
-        {% endif%}
-        {% for tag in post.getTags %}
-        <a href="/">{{ tag.name }} &nbsp;</a>
-        {% endfor %}
-        {{post.getCategory}}
-        {% endfor %}
+{# dump(posts)#}
+    {% for  post in posts %}
+    {{post.title}}  </br>  
+    {{post.content}} </br>
+    {% endfor %}</br>
+        
+        
 <h1>Регистрация</h1>
 <p>
 <form method="POST" action="/users" id="signin">
 <p><input name="login" type="text" placeholder=" Ведите логин"></p>
 <p><input name="pass" type="text" placeholder=" Ведите пароль"></p>
 <p><input name="fio"type="text"placeholder=" Ведите ФИО"></p>
-<p><input name="company" type="text"placeholder=" Название компании"></p>
-<p><input name="number" type="text" placeholder=" Ваш телефон"></p>
+<p><input name="nickname" type="text" placeholder=" Ваш телефон"></p>
 <p><input name="email" type="text" placeholder=" Ваш email"></p>
 <p><input name="go" type="submit"></p>
   </form>

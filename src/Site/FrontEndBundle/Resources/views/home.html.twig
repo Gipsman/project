@@ -1,22 +1,19 @@
 {% extends 'SiteFrontEndBundle::base_template.html.twig' %}
   
 {% block content %}
-{% for post in posts %}
-{{ post.title }}
-{{ post.preview }}    
-{{ post.content }} 
-{{ post.created|localizeddate('none', 'none', 'ru_RU', null, " d MMMM YYYY")}}
+    {{ dump(cats)}}
+{% for post in posts %} <br>  
+{{ post.title }} <br>  
+{{ post.preview }} <br>   
+{{ post.content }} <br>  
+{{ post.created|localizeddate('none', 'none', 'ru_RU', null, " d MMMM YYYY")}}<br>  
 {% for tag in post.tags %}
-{{tag.name}}
-
-{# примечание: это заккоментированно, пока не используется 
-#}
+{# примечание: это заккоментированно, пока не используется #}
 <a href="{{url('users_page',{slug:tag.slug})}}">{{tag.name}}</a>
-
-
 {% endfor %}
-{{post.getCategory}}
-{% endfor %}
+<a href="{{url('getpostbycat',{'slug':post.getCategory.getSlug})}}">{{post.getCategory}}</a>
+{% endfor %}</br>
+
 {{ knp_pagination_render(posts, 'SiteFrontEndBundle::pagination.html.twig') }}
 
 {% endblock %}

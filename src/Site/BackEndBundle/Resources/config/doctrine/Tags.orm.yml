@@ -20,5 +20,5 @@ Site\BackEndBundle\Entity\Tags:
     manyToMany:
         post:
             targetEntity: Post
-            mappedBy: tgs
+            mappedBy: tags
     lifecycleCallbacks: {  }
