@@ -1,0 +1,25 @@
+{% extends 'SiteFrontEndBundle::base_template.html.twig' %}
+
+{% block content %}
+        
+<h1>Добавить новость на сайт</h1>
+<p>
+<form method="POST" action="/users" id="signin">
+<p><input name="title" type="text" placeholder=" Ведите Заглавие"></p>
+<p><input name="content"type="text"placeholder=" Ведите Контент"></p>
+<p><input name="preview" type="text" placeholder=" Ведите Предпросмотр"></p>
+<p><input name="slug" type="text" placeholder=" Ведите slug"></p>
+<p><input name="created" type="date" placeholder=" Ваша дата"></p>
+<p><select name="cat"></p>
+{% for c in cats %}
+    <option value="{{c.id}}">{{c.name}}</option>
+{% endfor %}</br> 
+</select>
+
+<p><input name="go" type="submit"></p>
+  </form>
+</p>
+
+
+
+{% endblock %}
